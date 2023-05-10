@@ -1,5 +1,7 @@
 # Question:  
-<span style="color: red;">Hard</span>
++ `Easy`
++ `Median`
++ `Hard`
 
 
 # Solution:
