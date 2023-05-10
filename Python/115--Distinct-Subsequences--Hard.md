@@ -1,5 +1,5 @@
 # 115. Distinct Subsequences
-+ Hard
+<span style="color: red;">Hard</span>
 
 Given two strings s and t, return the number of distinct
 subsequences
@@ -83,4 +83,5 @@ To accelerate the speed, we create a LUT for t, where: ( ### the keys are unique
 Finally, dp[-1] is the answer
 
 The time complexity is: O($L_s$ * $L_k$).
+
 The spatial complexity is: O(max($L_s$, $L_k$))
