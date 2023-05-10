@@ -59,15 +59,13 @@ class Solution:
 ```
 
 # Oral:
-This is a DP problem. To solve it, we define the DP formation as: (### m)
+This is a DP problem. To solve it, we define the DP formation as: (### dp[k] represents all possible palindrome partitioning of s[:k]. Then to update dp[k+1], we check each location j before k+1, if s[j:k+1] is palindrome, all the possible partitions dp[j] adding on s[j:k+1] is a subset in dp[k+1] ) 
 	
     `dp[k+1] = Union( [ ele + s[j:k+1] for ele in dp[j] if s[j:k+1] is palindrome ])`
-
-Where, dp[k] represents all possible palindrome partitioning of s[:k]
 
 In implementation, we first implement the way to decide if a substring is palindrome.
 Then, we call the DP formulation within the for loop that going through s.
 
-The time complexity is: O(N^3).
+The time complexity is: O(N^3). Where N is the length of the input `s`
 
 The spatial complexity is: O(2^N)
