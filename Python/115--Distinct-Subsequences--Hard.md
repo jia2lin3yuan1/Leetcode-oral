@@ -40,7 +40,7 @@ s and t consist of English letters.
 ```
 
 # Solution:
-```Python {.line-numbers}
+```python {.line-numbers}
 class Solution:
     def numDistinct(self, s: str, t: str) -> int:
         # create lut for target
