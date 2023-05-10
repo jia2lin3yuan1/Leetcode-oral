@@ -66,10 +66,7 @@ class Solution:
 
 # Oral:
 We can use DP to solve this problem. First, we create a list to record the DP status, where : (### its kth element means the number of the subsequence: the first k values in t)
-
-        ```
-        dp[k]: number of subsequence t[:k-1] 
-        ```
+        `dp[k]: number of subsequence t[:k-1]` 
 
 The list dp is at length (len(t) + 1), it is initialized as dp[0] = 1 and all 0 in other locations.
 
@@ -85,5 +82,5 @@ To accelerate the speed, we create a LUT for t, where: ( ### the keys are unique
 
 Finally, dp[-1] is the answer
 
-The time complexity is: O(L_s * L_k).
+The time complexity is: O($L_s$ * L_k).
 The spatial complexity is: O(max(L_s, L_k))
