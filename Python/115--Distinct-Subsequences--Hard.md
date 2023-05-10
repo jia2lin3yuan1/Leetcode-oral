@@ -65,17 +65,23 @@ class Solution:
 ```
 
 # Oral:
-We can use DP to solve this problem. First, we create a list to record the DP status, where : (### its kth element means the number of the subsequence: the first k values in t)
-        ``` dp[k]: number of subsequence t[:k-1] ```
+We can use DP to solve this problem. First, we create a list to record the DP status, where : (### its kth element means the number of the subsequence: the first $$k$$ values in t)
+        ``` dp[k]: number of subsequence t[:k-1] 
+        ```
+
 The list dp is at length (len(t) + 1), it is initialized as dp[0] = 1 and all 0 in other locations.
 
 When we go through each character v in s, if it equals to a character tc in t at tk,( tc == v), run the DP formulation, that : (### dp[tk+1] equals to adding the dp[tk] to dp[tk+1] )
-       dp[tk + 1] += dp[tk]
+       ``` dp[tk + 1] += dp[tk] 
+       ```
 
 To accelerate the speed, we create a LUT for t, where: ( ### the keys are unique characters appeared in t, and the value is a list of the location where the key is in t )
-       target_lut = {tc: [tk_0, tk_1], …}
+       ```target_lut = {tc: [tk_0, tk_1], …}
+       ```
 
 Finally, dp[-1] is the answer
 
+```
 The time complexity is: O(L_s * L_k).
 The spatial complexity is: O(max(L_s, L_k))
+```
