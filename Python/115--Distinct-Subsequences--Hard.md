@@ -48,7 +48,7 @@ class Solution:
         for k, v in enumerate(t):
             if v not in target_lut:
                 target_lut[v] = []
-            # insert at head, so that the update order in line 17~18 is correct
+            # insert at head, so that the updating order in below is correct
             target_lut[v].insert(0, k)
 
 
@@ -58,6 +58,7 @@ class Solution:
         for v in s:
             if v not in target_lut:
                 continue
+            # be careful about the updating order
             for tk in target_lut[v]:
                 dp[tk+1] += dp[tk]
 
