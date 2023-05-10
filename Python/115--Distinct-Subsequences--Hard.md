@@ -65,7 +65,7 @@ class Solution:
 ```
 
 # Oral:
-We can use DP to solve this problem. First, we create a list to record the DP status, where : (### its kth element means the number of the subsequence: the first $$k$$ values in t)
+We can use DP to solve this problem. First, we create a list to record the DP status, where : (### its kth element means the number of the subsequence: the first k values in t)
         ``` dp[k]: number of subsequence t[:k-1] 
         ```
 
