@@ -1,6 +1,6 @@
-# Question:  
+# 
 + `Easy`
-+ `Median`
++ `Medium`
 + `Hard`
 
 
