@@ -60,7 +60,6 @@ class Solution:
             stack.append(top.left)
             stack.append(top.right)
         
-        print(mode_lut)
         max_cnt = max([ele[1] for ele in mode_lut.items()])
         modes = [ele[0] for ele in mode_lut.items() if ele[1] == max_cnt]
 
@@ -68,3 +67,8 @@ class Solution:
 ```
 
 # Oral:
+Do the BFS or DFS to go through the tree and record the appearance times for each mode. Then compute the maximum of appearances and return the modes those their appearance equels to the maximum appearance.
+
+Time complexity: O(N)
+
+Space complexity: O(1)

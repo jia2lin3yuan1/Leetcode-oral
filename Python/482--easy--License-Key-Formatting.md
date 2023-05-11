@@ -53,3 +53,18 @@ class Solution:
 ```
 
 # Oral:
+
+To reformat the string under the given rules, we iterative through the input string `s` from end to the begining. We initialize the output_str as an empty string and a count meter as 0. Then iterate s starting from the right side,
+```bash
+if the charactor is '-', continue
+if the charactor is a letter, 
+    if added 'k' letters, set the count meter to 0 and add '-' to the output_str 
+    
+    add the letter to the head of output_str and add 1 to the count meter
+```
+
+We check the count meter before add the letter to output_str is to avoid adding '-' to the first group in output_str.
+
+Time complexity: O(N)
+
+Space complexity: O(N)
