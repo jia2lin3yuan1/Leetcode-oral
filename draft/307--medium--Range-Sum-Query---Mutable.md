@@ -108,5 +108,7 @@ class NumArray:
 # param_2 = obj.sumRange(left,right)
 ```
 
++ [zhihu for segment tree](https://www.jianshu.com/p/91f2c503e62f)
+
 # Oral:
 
