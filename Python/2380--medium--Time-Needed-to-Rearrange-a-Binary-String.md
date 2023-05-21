@@ -71,5 +71,23 @@ class Solution:
 
 # Oral:
 + Brute force solution
+    
+    There is a brute force solution that can recursively solve the problem. In each iteration, we traverse the string and update every occurrency of `01` in `s` to `10` in `new_s`. If a swap process occurs, we return `1` plus on the recursive call to the function using the updated input `out_s`. If no swap process occurs, we return `0`. 
+    
+    - Time Complexity: O(N^2)
+    - Space Complexity: O(N^2) 
 
 + math solution
+
+    Analysis the problem with math, if we traverse the string, regarding an element `v` in `s`, there are two cases:
+    - if `v = 1`:
+       + if there is no `0` ahead of `v`, no need to do swap process.
+       + else (there are zeros ahead of `v`), 
+            - there are more `1` ahead of `v`, the number of swap equals to the maximum of the number of swaps in last step plus one 
+            - there are more `0` ahead of `v`, the number of swap equals to the number of zeros ahead of `v`.
+         In summary, we take the maximum of the two cases in this case.
+
+    - if `v = 0`, we accumulate the occurence of zeros.
+
+    - Time Complexity: O(N)
+    - Space Complexity: O(1)

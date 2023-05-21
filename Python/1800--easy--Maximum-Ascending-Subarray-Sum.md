@@ -47,7 +47,7 @@ class Solution:
         max_sum = 0
         cur_sum = 0
         for k in range(len(nums)):
-            if nums[k] <= nums[k-1]:
+            if k == 0 or nums[k] <= nums[k-1]:
                 max_sum = max(max_sum, cur_sum)
                 cur_sum = nums[k]
             else:
@@ -57,3 +57,11 @@ class Solution:
 ```
 
 # Oral:
+To solve this problem, we traverse the list. When we encounter `nums[k] <= nums[k-1]`, it indicates the end of an ascending subarray. At this point, we update the `max_sum` value and reset the accumulated local sum as `nums[k]`. Otherwise, if `nums[k] > nums[k-1]`,  we add the element `nums[k]` to the accumulated local sum.
+
+At last, return the maximum of `max_sum` and the last local sum.
+
+Time complexity: O(N)
+
+Space complexity: O(1)
+

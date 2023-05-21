@@ -48,27 +48,36 @@ class Solution:
         if length == 2 * k - 1:
             return head
         
-        # update k to ensure the k is smaller than length/2
-        k = min(k, length - k  + 1)
+        # swap lft and rht to ensure lft is smaller than length/2
+        lft, rht = k, length - k + 1
+        if lft > rht:
+            lft, rht = rht, lft
 
         # 2nd travesal to locate the first and second node
-        fst, snd = None, None
-        node, cnt = head, 0
+        fst, scd = None, None
+        node, cnt = head, 1
         while node is not None:
-            cnt += 1
-            if cnt == k:
+            if cnt == lft:
                 fst = node
-            if cnt == length - k + 1:
-                snd = node
+            elif cnt == rht:
+                scd = node
                 break
+            cnt += 1
             node = node.next
 
         # swap value
-        fst.val, snd.val = snd.val, fst.val
+        fst.val, scd.val = scd.val, fst.val
 
         return head
 ```
 
 # Oral:
+In order to get the `kth` node from the end, we need to first iterate over the list to get the length of the list.
+
+If `k == length - k + 1`, we don't need to swap the nodes. Can return the head directly.
+
+If `k > length/2`, we can swap `k` and `length - k + 1` to ensure the `kth` node from the begining is always on the left. After that, we do second iteration over the list and find the `kth` node from the begining and the `kth` node from the end. At last, swap the values.
 
 Time complexity: O(N)
+
+Space complexity: O(1)

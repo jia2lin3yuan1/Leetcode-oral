@@ -75,3 +75,12 @@ class Solution:
 ```
 
 # Oral:
+The spiral Matrix problem can be decomposed into processing multiple rounds separately. Each round can be further divided into `4` edges. 
+
+To process a round, we require information such as the round's size, one of the row and col edge, and the given `rows` and `cols`. 
+
+Add the starting cell into the `spirals` array, and then we only need to process rounds starting with a size `3` and the edge size will increase by `2` in each subsequent process. This guarantees that round will have `4` edges. 
+
+Time complexity: O(rows * cols)
+
+Spatial complexity: O(rows * cols)
